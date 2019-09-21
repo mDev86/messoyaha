@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1a237e</color>
+    <color name="colorPrimaryDark">#000051</color>
+    <color name="colorCardOk">#3700B3</color>
+    <color name="colorCardBad">#B00020</color>
+    <color name="colorLoader">@color/colorWhite</color>
+    <color name="colorDivider">#33000000</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorDark">#000</color>
+</resources>

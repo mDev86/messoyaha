@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".InfoActivity"
+        android:id="@+id/layoutInfo"
+
+        android:padding="8dp">
+
+
+      <!--  <SeekBar android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/seekNoise"
+                   app:layout_constraintTop_toBottomOf="@id/profileCard"
+                   app:layout_constraintStart_toStartOf="parent"
+                   android:layout_marginTop="28dp"
+                   android:max="100"
+                   android:min="0"
+    />
+
+    <SeekBar android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/seekPaint"
+             app:layout_constraintTop_toBottomOf="@id/seekNoise"
+             app:layout_constraintStart_toStartOf="parent"
+             android:layout_marginTop="20dp"
+             android:max="20"
+             android:min="0"
+    />
+
+    <SeekBar android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/seekRedraw"
+             app:layout_constraintTop_toBottomOf="@id/seekPaint"
+             app:layout_constraintStart_toStartOf="parent"
+             android:layout_marginTop="20dp"
+             android:max="250"
+             android:min="0"
+    />-->
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/invalidCard"
+            android:visibility="gone"
+            app:cardCornerRadius="4dp">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:background="@color/colorCardBad">
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/imgAlertLeft"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:src="@android:drawable/ic_dialog_alert"
+                       app:layout_constraintEnd_toStartOf="@+id/alertText" android:layout_marginEnd="8dp"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/imgAlertRight"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:src="@android:drawable/ic_dialog_alert"
+                       app:layout_constraintStart_toEndOf="@+id/alertText" android:layout_marginStart="8dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                      app:layout_constraintTop_toTopOf="parent"
+                      android:id="@+id/alertText"
+                      android:text="ВНИМАНИЕ!!!\nПропуск недействителен с "
+                      android:textStyle="bold"
+                      android:textSize="18sp"
+                      android:textColor="#FFF"
+                      android:textAlignment="center"
+                      android:layout_marginStart="8dp"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                      app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/invalidDate"
+                      app:layout_constraintTop_toBottomOf="@id/alertText"
+                      android:text="12.12.2019 14:18:26"
+                      android:textStyle="bold|italic"
+                      android:textSize="18sp"
+                      android:textColor="#FFF"
+                      android:textAlignment="center"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                      android:layout_marginEnd="8dp"/>
+
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/alertNoise"
+                         app:layout_constraintTop_toTopOf="@id/invalidDate"
+                         app:layout_constraintBottom_toBottomOf="@id/invalidDate"
+                         app:layout_constraintLeft_toLeftOf="@id/invalidDate"
+                         app:layout_constraintRight_toRightOf="@id/invalidDate"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/alertNoise1"
+                         app:layout_constraintTop_toTopOf="@id/invalidDate"
+                         app:layout_constraintBottom_toBottomOf="@id/invalidDate"
+                         app:layout_constraintLeft_toLeftOf="@id/invalidDate"
+                         app:layout_constraintRight_toRightOf="@id/invalidDate"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/invalidCard"
+            android:id="@+id/profileCard"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="2dp"
+            app:cardBackgroundColor="@color/colorCardOk">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passNumC"
+                      android:text="Пропуск № "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      android:textSize="18sp"
+                      android:textStyle="bold"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passNum"
+                      android:text="9000006С"
+                      app:layout_constraintStart_toEndOf="@id/passNumC"
+                      app:layout_constraintTop_toTopOf="parent"
+                      android:textSize="18sp"
+                      android:textStyle="bold"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passNumNoise"
+                         app:layout_constraintTop_toTopOf="@id/passNum"
+                         app:layout_constraintBottom_toBottomOf="@id/passNum"
+                         app:layout_constraintLeft_toLeftOf="@id/passNum"
+                         app:layout_constraintRight_toRightOf="@id/passNum"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passNumNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passNum"
+                         app:layout_constraintBottom_toBottomOf="@id/passNum"
+                         app:layout_constraintLeft_toLeftOf="@id/passNum"
+                         app:layout_constraintRight_toRightOf="@id/passNum"/>
+
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passDate"
+                      android:text="с 01.06.2019 по 31.12.2019"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintBaseline_toBaselineOf="@id/passNum"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passDateNoise"
+                         app:layout_constraintTop_toTopOf="@id/passDate"
+                         app:layout_constraintBottom_toBottomOf="@id/passDate"
+                         app:layout_constraintLeft_toLeftOf="@id/passDate"
+                         app:layout_constraintRight_toRightOf="@id/passDate"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passDateNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passDate"
+                         app:layout_constraintBottom_toBottomOf="@id/passDate"
+                         app:layout_constraintLeft_toLeftOf="@id/passDate"
+                         app:layout_constraintRight_toRightOf="@id/passDate"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/profileDivider"
+                    android:background="#E9AFAFAF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/passNum"
+                    android:layout_marginBottom="8dp"></View>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passFioC"
+                      android:text="ФИО: "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/profileDivider"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passFio"
+                      android:text="Черняев Андрей Владимирович"
+                      android:textStyle="italic"
+                      app:layout_constraintStart_toEndOf="@id/passFioC"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@id/passFioC"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passFioNoise"
+                         app:layout_constraintTop_toTopOf="@id/passFio"
+                         app:layout_constraintBottom_toBottomOf="@id/passFio"
+                         app:layout_constraintLeft_toLeftOf="@id/passFio"
+                         app:layout_constraintRight_toRightOf="@id/passFio"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passFioNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passFio"
+                         app:layout_constraintBottom_toBottomOf="@id/passFio"
+                         app:layout_constraintLeft_toLeftOf="@id/passFio"
+                         app:layout_constraintRight_toRightOf="@id/passFio"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passPositionC"
+                      android:text="Должность: "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/passFioC"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passPosition"
+                      android:text="Электрогазосварщик (position 2)"
+                      android:textStyle="italic"
+                      app:layout_constraintStart_toEndOf="@id/passPositionC"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@id/passPositionC"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passPositionNoise"
+                         app:layout_constraintTop_toTopOf="@id/passPosition"
+                         app:layout_constraintBottom_toBottomOf="@id/passPosition"
+                         app:layout_constraintLeft_toLeftOf="@id/passPosition"
+                         app:layout_constraintRight_toRightOf="@id/passPosition"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passPositionNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passPosition"
+                         app:layout_constraintBottom_toBottomOf="@id/passPosition"
+                         app:layout_constraintLeft_toLeftOf="@id/passPosition"
+                         app:layout_constraintRight_toRightOf="@id/passPosition"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passCompanyC"
+                      android:text="Предприятие: "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/passPositionC"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passCompany"
+                      android:text="АО ПРЕМЬЕРСТРОЙ"
+                      android:textStyle="italic"
+                      app:layout_constraintStart_toEndOf="@id/passCompanyC"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@id/passCompanyC"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passCompanyNoise"
+                         app:layout_constraintTop_toTopOf="@id/passCompany"
+                         app:layout_constraintBottom_toBottomOf="@id/passCompany"
+                         app:layout_constraintLeft_toLeftOf="@id/passCompany"
+                         app:layout_constraintRight_toRightOf="@id/passCompany"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passCompanyNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passCompany"
+                         app:layout_constraintBottom_toBottomOf="@id/passCompany"
+                         app:layout_constraintLeft_toLeftOf="@id/passCompany"
+                         app:layout_constraintRight_toRightOf="@id/passCompany"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passSubCompanyC"
+                      android:text="Субподрядчик: "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/passCompanyC"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passSubCompany"
+                      android:text="АО ПРЕМЬЕРСТРОЙ"
+                      android:textStyle="italic"
+                      app:layout_constraintStart_toEndOf="@id/passSubCompanyC"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@id/passSubCompanyC"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passSubCompanyNoise"
+                         app:layout_constraintTop_toTopOf="@id/passSubCompany"
+                         app:layout_constraintBottom_toBottomOf="@id/passSubCompany"
+                         app:layout_constraintLeft_toLeftOf="@id/passSubCompany"
+                         app:layout_constraintRight_toRightOf="@id/passCompany"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passSubCompanyNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passSubCompany"
+                         app:layout_constraintBottom_toBottomOf="@id/passSubCompany"
+                         app:layout_constraintLeft_toLeftOf="@id/passSubCompany"
+                         app:layout_constraintRight_toRightOf="@id/passCompany"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passAccessC"
+                      android:text="Допуск: "
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@id/passSubCompanyC"
+                      android:textColor="@color/colorWhite"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/passAccess"
+                      android:text="ВМЛУ | ВМЛУ КС с УПГ | ВМЛУ ЦПС"
+                      android:textStyle="italic"
+                      app:layout_constraintStart_toEndOf="@id/passAccessC"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@id/passAccessC"
+                      android:textColor="@color/colorWhite"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passAccessNoise"
+                         app:layout_constraintTop_toTopOf="@id/passAccess"
+                         app:layout_constraintBottom_toBottomOf="@id/passAccess"
+                         app:layout_constraintLeft_toLeftOf="@id/passAccess"
+                         app:layout_constraintRight_toRightOf="@id/passAccess"/>
+            <SurfaceView android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:id="@+id/passAccessNoise1"
+                         app:layout_constraintTop_toTopOf="@id/passAccess"
+                         app:layout_constraintBottom_toBottomOf="@id/passAccess"
+                         app:layout_constraintLeft_toLeftOf="@id/passAccess"
+                         app:layout_constraintRight_toRightOf="@id/passAccess"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/textDoc"
+              android:text="ДОКУМЕНТЫ"
+              app:layout_constraintTop_toBottomOf="@id/profileCard"
+              app:layout_constraintStart_toStartOf="parent"
+              android:layout_marginTop="8dp"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/docDivider"
+            android:background="#E9AFAFAF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDoc"
+            android:layout_marginBottom="8dp"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/docList"
+            app:layout_constraintTop_toBottomOf="@id/docDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/doc_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <SurfaceView android:layout_width="0dp"
+                 android:layout_height="0dp"
+                 android:id="@+id/docListNoise"
+                 app:layout_constraintTop_toTopOf="@id/docList"
+                 app:layout_constraintBottom_toBottomOf="@id/docList"
+                 app:layout_constraintLeft_toLeftOf="@id/docList"
+                 app:layout_constraintRight_toRightOf="@id/docList"/>
+    <SurfaceView android:layout_width="0dp"
+                 android:layout_height="0dp"
+                 android:id="@+id/docListNoise1"
+                 app:layout_constraintTop_toTopOf="@id/docList"
+                 app:layout_constraintBottom_toBottomOf="@id/docList"
+                 app:layout_constraintLeft_toLeftOf="@id/docList"
+                 app:layout_constraintRight_toRightOf="@id/docList"/>
+
+</android.support.constraint.ConstraintLayout>

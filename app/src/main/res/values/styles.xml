@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+
+        <item name="android:buttonStyle">@style/AppTheme.Button</item>
+
+    </style>
+
+    <style name="AppTheme.Button" parent="android:Widget.Material.Button">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.CalcButton" parent="AppTheme.Button">
+        <item name="android:textSize">32sp</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/negative</item>
+    </style>
+
+    <style name="positive">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+    <style name="negative">
+        <item name="android:textColor">@color/colorCardBad</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+</resources>
